@@ -1,6 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Router } from '@angular/router';
 
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 export class User {
     constructor (
         public firstName: string,
@@ -28,8 +31,8 @@ let users = [
 
 @Injectable()
 export class AuthService {
-    
-    loggedIn = false;
+
+    loginStatus = new BehaviorSubject<boolean>(false);
 
     private currentUser: any;
 
@@ -41,12 +44,11 @@ export class AuthService {
         return this.currentUser;
     }
     
-
     isAuthenticated() {
         const promise = new Promise(
             (resolve, reject) => {
                 setTimeout(() => {
-                    resolve(this.loggedIn);
+                    resolve(this.loginStatus);
                 }, 300);
             }
         );
@@ -59,7 +61,7 @@ export class AuthService {
         this.currentUser = authenticatedUser;
 
         if(authenticatedUser && authenticatedUser.password === credentials.password) {
-            this.loggedIn = true;
+            this.loginStatus.next(true);
             this._router.navigate(["/profile"]);
             return true;
         }
@@ -67,6 +69,10 @@ export class AuthService {
     }
 
     logout() {
-        this.loggedIn = false;
+        this.loginStatus.next(false);
     }
-}
+
+    status() {
+       return this.loginStatus.asObservable();
+    }
+} 

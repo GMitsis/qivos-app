@@ -7,3 +7,7 @@
     color: red;
     margin-right: 10px;
 }
+
+.logout-link:hover {
+    cursor: pointer;
+}

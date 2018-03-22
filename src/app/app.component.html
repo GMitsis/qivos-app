@@ -7,9 +7,9 @@
   </button>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-    <ul class="navbar-nav" *ngIf="isLoggedIn">
+    <ul class="navbar-nav" *ngIf="(status | async)">
       <li class="nav-item">
-        <a class="nav-link" (click)="onLogout()"> Logout </a> 
+        <a class="nav-link logout-link" (click)="onLogout()"> Logout </a> 
       </li>
     </ul>
   </div>
@@ -17,4 +17,4 @@
 
 <div class="container-fluid">
   <router-outlet></router-outlet> 
-</div>
+</div> 
