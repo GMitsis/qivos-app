@@ -1,0 +1,42 @@
+.edit-icon-container {
+    text-align: right;
+}
+
+.edit-icon {
+    color: #007bff;
+}
+
+.edit-icon:hover {
+    cursor: pointer;
+}
+
+.body {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 1em;
+    border-top: 1px solid #EEE;
+}
+
+.details-container {
+    padding: 0.5em;
+}
+
+.details-icon {
+    text-align: right;
+    color: #007bff;
+}
+
+.details {
+    text-align: left;
+}
+
+.male-icon {
+    color: green;
+}
+
+.female-icon {
+    color: palevioletred;
+}

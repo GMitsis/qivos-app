@@ -1,0 +1,9 @@
+.navbar-brand {
+    display: flex;
+    align-items: center; 
+}
+
+.brand-icon {
+    color: red;
+    margin-right: 10px;
+}

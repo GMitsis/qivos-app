@@ -1,0 +1,77 @@
+<div class="row main-page">
+  <div class="col-12 col-container">
+    <div>
+      <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+        <i class="fas fa-chevron-left"></i> Back
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
+    <div class="card">
+      <div class="card-header">
+        Edit Profile
+      </div>
+      <div class="card-body">
+        <form [formGroup]="profileForm">
+          <div class="form-group">
+            <label for="firstName"> First Name </label>
+            <input type="text" id="firstName" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid': (profileForm.get('firstName').touched || profileForm.get('firstName').dirty) && !profileForm.get('firstName').valid }">
+            <div class="invalid-feedback">
+              Please enter First Name.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName"> Last Name </label>
+            <input type="text" id="lastName" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid': (profileForm.get('lastName').touched || profileForm.get('lastName').dirty) && !profileForm.get('lastName').valid }">
+            <div class="invalid-feedback">
+              Please enter Last Name.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNumber"> Card Number </label>
+            <input type="text" [maxLength]="9" (keypress)="onKeyPress($event)" id="cardNumber" class="form-control" formControlName="cardNumber" [ngClass]="{'is-invalid': (profileForm.get('cardNumber').touched || profileForm.get('cardNumber').dirty) && !profileForm.get('cardNumber').valid }">
+            <div class="invalid-feedback">
+              Please enter Card Number.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="email" id="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid': (profileForm.get('email').touched || profileForm.get('email').dirty) && !profileForm.get('email').valid }">
+            <div class="invalid-feedback">
+              Please enter a valid Email.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mobileNumber"> Mobile Number </label>
+            <input type="number" id="mobileNumber" class="form-control" formControlName="mobileNumber" [ngClass]="{'is-invalid': (profileForm.get('mobileNumber').touched || profileForm.get('mobileNumber').dirty) && !profileForm.get('mobileNumber').valid }">
+            <div class="invalid-feedback">
+              Please enter Mobile Number.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" formControlName="gender">
+              <label class="form-check-label" for="genderMale"> Male </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" formControlName="gender">
+              <label class="form-check-label" for="genderFemale"> Female </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid"> Submit </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.page-conntainer {
+    min-height: 93vh;
+    margin: 0 auto; 
+    padding-top: 30px;
+    background-image: url("../../assets/images/not_found_background.jpg");
+    background-size: cover;
+}
+
+.number-container {
+    padding: 7px;
+}
+
+.number, .page-not-found, .home {
+    text-align: center;
+    height: 17vw;
+    line-height: 17vw;
+    font-size: 80px;
+    color: #FFF; 
+}
+
+.oops {
+    text-align: center;
+    height: 34.75vw;
+    line-height: 34.75vw;
+    color: #FFF;
+    font-size: 50px;
+    background-color: rgba(92, 188, 200, 0.75);
+}
+
+.first {
+    background-color: rgba(138, 186, 77, 0.75);
+}
+
+.second {
+    background-color: rgba(222, 189, 73, 0.75);
+}
+
+.third { 
+    background-color: rgba(170, 106, 186, 0.75);
+}
+
+.page-not-found {
+    background-color: rgba(224, 123, 137, 0.75);
+}
+
+.home {
+    background-color: rgba(119, 133, 110, 0.75);
+}
+
+.home-container {
+    padding: 7px;
+}
